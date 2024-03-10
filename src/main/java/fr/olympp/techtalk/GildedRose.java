@@ -63,6 +63,11 @@ public class GildedRose {
         decreaseQuality(item);
         decreaseQuality(item);
         item.sellIn--;
+
+        if (item.sellIn < 0) {
+            decreaseQuality(item);
+            decreaseQuality(item);
+        }
     }
 
     private void updateNormalItem(Item item) {
