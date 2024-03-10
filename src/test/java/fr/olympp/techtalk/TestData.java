@@ -1,4 +1,4 @@
-import fr.olympp.techtalk.Item;
+package fr.olympp.techtalk;
 
 public class TestData {
     public static Item[] getTestItems() {
