@@ -24,16 +24,13 @@ public class GildedRose {
             case Constants.SULFURAS_HAND_OF_RAGNAROS:
                 break; // Sulfuras does not change
             case Constants.CONJURED_MANA_CAKE:
-                decreaseQuality(item);
-                decreaseQuality(item);
-                item.sellIn--;
+                updateConjuredItem(item);
                 break;
             default:
                 updateNormalItem(item);
                 break;
         }
     }
-
 
     private void updateAgedBrie(Item item) {
         increaseQuality(item);
@@ -60,6 +57,12 @@ public class GildedRose {
         if (item.sellIn < 0) {
             item.quality = Constants.MIN_QUALITY;
         }
+    }
+
+    private void updateConjuredItem(Item item) {
+        decreaseQuality(item);
+        decreaseQuality(item);
+        item.sellIn--;
     }
 
     private void updateNormalItem(Item item) {
