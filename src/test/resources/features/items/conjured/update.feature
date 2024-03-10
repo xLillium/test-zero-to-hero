@@ -9,3 +9,8 @@ Feature: Conjured Items degradation
     When a day passes
     Then its quality should be 4
     And its sell-in should be 2
+
+  Scenario: Conjured item quality decreases twice as fast after the sell-in date
+    Given a "Conjured Mana Cake" with a sell-in of 0 and a quality of 6
+    When a day passes
+    Then its quality should be 2
