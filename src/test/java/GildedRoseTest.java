@@ -15,8 +15,10 @@ public class GildedRoseTest {
         gildedRose.updateQuality();
 
         // Assert
-        assertThat(gildedRose.items).extracting("quality").containsExactly(0);
-        assertThat(gildedRose.items).extracting("sellIn").containsExactly(0);
+        assertThat(gildedRose.items).extracting("quality")
+                .containsExactly(19, 1, 6, 80, 80, 21, 50, 50);
+        assertThat(gildedRose.items).extracting("sellIn")
+                .containsExactly(9, 1, 4, 0, -1, 14, 9, 4);
     }
 
 }
