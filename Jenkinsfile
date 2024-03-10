@@ -25,6 +25,17 @@ pipeline {
             }
         }
 
+        stage('Integration Tests') {
+            steps {
+                bat 'mvn test -Pcucumber'
+            }
+            post {
+                always {
+                    cucumber 'target/cucumber-reports/*.json'
+                }
+            }
+        }
+
         stage('Publish Artifact') {
             steps {
                 echo 'Archiving artifact...'
