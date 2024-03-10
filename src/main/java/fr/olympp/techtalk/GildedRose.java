@@ -23,6 +23,11 @@ public class GildedRose {
                 break;
             case Constants.SULFURAS_HAND_OF_RAGNAROS:
                 break; // Sulfuras does not change
+            case Constants.CONJURED_MANA_CAKE:
+                decreaseQuality(item);
+                decreaseQuality(item);
+                item.sellIn--;
+                break;
             default:
                 updateNormalItem(item);
                 break;
