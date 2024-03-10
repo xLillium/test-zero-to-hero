@@ -14,3 +14,15 @@ Feature: Conjured Items degradation
     Given a "Conjured Mana Cake" with a sell-in of 0 and a quality of 6
     When a day passes
     Then its quality should be 2
+
+  Scenario Outline: Varied degradation rates of conjured items under different conditions
+    Given a "Conjured Mana Cake" with a sell-in of <sellIn> and a quality of <initialQuality>
+    When <days> day(s) pass
+    Then its quality should be <finalQuality>
+
+    Examples:
+      | sellIn | initialQuality | days | finalQuality |
+      | 5      | 10             | 1    | 8            |
+      | 3      | 6              | 1    | 4            |
+      | 0      | 6              | 1    | 2            |
+      | 3      | 0              | 1    | 0            |

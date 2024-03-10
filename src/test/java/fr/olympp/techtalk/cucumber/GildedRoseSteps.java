@@ -33,4 +33,11 @@ public class GildedRoseSteps {
     public void itsSellInShouldBe(int expectedSellin) {
         assertThat(items[0].sellIn).isEqualTo(expectedSellin);
     }
+
+    @When("{int} day\\(s) pass")
+    public void daysDaySPass(int days) {
+        for (int i = 0; i < days; i++) {
+            gildedRose.updateQuality();
+        }
+    }
 }
