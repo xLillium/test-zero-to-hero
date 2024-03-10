@@ -14,6 +14,17 @@ pipeline {
             }
         }
 
+        stage('Unit Tests') {
+            steps {
+                bat 'mvn test'
+            }
+            post {
+                always {
+                    junit 'target/surefire-reports/*.xml'
+                }
+            }
+        }
+
         stage('Publish Artifact') {
             steps {
                 echo 'Archiving artifact...'
