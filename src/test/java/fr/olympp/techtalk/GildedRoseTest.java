@@ -1,5 +1,6 @@
 package fr.olympp.techtalk;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -7,11 +8,18 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class GildedRoseTest {
 
+    private GildedRose gildedRose;
+    private GildedRoseGoldenMaster goldenMaster;
+
+    @Before
+    public void setUp() {
+        Item[] testItems = TestData.getTestItems();
+        gildedRose = new GildedRose(testItems);
+        goldenMaster = new GildedRoseGoldenMaster(testItems.clone());
+    }
+
     @Test
     public void shouldUpdateItemQualityAndSellInWhenUpdatingQualityOnce() {
-        // Arrange
-        GildedRose gildedRose = new GildedRose(TestData.getTestItems());
-
         // Act
         gildedRose.updateQuality();
 
@@ -22,10 +30,6 @@ public class GildedRoseTest {
 
     @Test
     public void shouldMatchGoldenMasterWhenUpdatingQuality100Times() {
-        // Arrange
-        GildedRose gildedRose = new GildedRose(TestData.getTestItems());
-        GildedRoseGoldenMaster goldenMaster = new GildedRoseGoldenMaster(TestData.getTestItems());
-
         for (int i = 0; i < 100; i++) {
             // Act
             gildedRose.updateQuality();
