@@ -93,4 +93,16 @@ public class GildedRoseTest {
         assertThat(app.items[0].sellIn).isEqualTo(2);
     }
 
+    @Test
+    public void shouldDegradeConjuredItemsTwiceAsFastAfterSellInDate() {
+        Item[] items = new Item[] { new Item(Constants.CONJURED_MANA_CAKE, 1, 10) };
+        GildedRose app = new GildedRose(items);
+
+        app.updateQuality();
+        app.updateQuality();
+
+        assertThat(app.items[0].quality).isEqualTo(4);
+        assertThat(app.items[0].sellIn).isEqualTo(-1);
+    }
+
 }
