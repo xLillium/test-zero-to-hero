@@ -60,13 +60,11 @@ public class GildedRose {
     }
 
     private void updateConjuredItem(Item item) {
-        decreaseQuality(item);
-        decreaseQuality(item);
+        decreaseQualityOfConjuredItem(item);
         item.sellIn--;
 
         if (item.sellIn < 0) {
-            decreaseQuality(item);
-            decreaseQuality(item);
+            decreaseQualityOfConjuredItem(item);
         }
     }
 
@@ -89,5 +87,10 @@ public class GildedRose {
         if (item.quality > Constants.MIN_QUALITY) {
             item.quality--;
         }
+    }
+
+    private void decreaseQualityOfConjuredItem(Item item) {
+        decreaseQuality(item);
+        decreaseQuality(item);
     }
 }
