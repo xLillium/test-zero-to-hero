@@ -42,7 +42,7 @@ public class GildedRoseTest {
 
     @Test
     public void shouldIncreaseQualityByOneForAgedBrieJustBeforeSellInZero() {
-        Item[] items = new Item[] { new Item("Aged Brie", 1, 10) };
+        Item[] items = new Item[] { new Item(Constants.AGED_BRIE, 1, 10) };
         GildedRose app = new GildedRose(items);
 
         app.updateQuality();
@@ -52,7 +52,7 @@ public class GildedRoseTest {
 
     @Test
     public void shouldDecreaseQualityTwiceAsFastWhenSellInBelowZero() {
-        Item[] items = new Item[] { new Item("Elixir of the Mongoose", 0, 10) };
+        Item[] items = new Item[] { new Item(Constants.ELIXIR_OF_THE_MONGOOSE, 0, 10) };
         GildedRose app = new GildedRose(items);
 
         app.updateQuality();
@@ -63,7 +63,7 @@ public class GildedRoseTest {
 
     @Test
     public void shouldNotDecreaseQualityBelowZero() {
-        Item[] items = new Item[] { new Item("Elixir of the Mongoose", 5, 0) };
+        Item[] items = new Item[] { new Item(Constants.ELIXIR_OF_THE_MONGOOSE, 5, 0) };
         GildedRose app = new GildedRose(items);
 
         app.updateQuality();
@@ -74,7 +74,7 @@ public class GildedRoseTest {
 
     @Test
     public void shouldIncreaseBackstagePassesQualityByThreeWhenSellInBelowSix() {
-        Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 5, 20) };
+        Item[] items = new Item[] { new Item(Constants.BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT, 5, 20) };
         GildedRose app = new GildedRose(items);
 
         app.updateQuality();
