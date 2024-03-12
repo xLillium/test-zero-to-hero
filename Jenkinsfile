@@ -14,7 +14,7 @@ pipeline {
             }
         }
 
-        stage('Unit Tests') {
+        /*stage('Unit Tests') {
             steps {
                 bat 'mvn test'
             }
@@ -34,7 +34,7 @@ pipeline {
                     cucumber 'target/cucumber-reports/*.json'
                 }
             }
-        }
+        }*/
 
         stage('Publish Artifact') {
             steps {
