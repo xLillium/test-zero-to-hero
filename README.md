@@ -1,12 +1,11 @@
 # 🌹 Gilded Rose Refactoring Kata
 
-[![Build Status](https://img.shields.io/jenkins/build?jobUrl=http%3A%2F%2Fexample.com%2Fjenkins%2Fjob%2FGildedRose%2F)](https://example.com/jenkins/job/GildedRose/)
-[![Test Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen)](https://example.com/coverage)
+[![Test Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen)](https://github.com/xLillium/test-zero-to-hero)
 [![Java Version](https://img.shields.io/badge/java-21-orange)](https://openjdk.java.net/projects/jdk/21/)
 
 A Java implementation of the famous Gilded Rose refactoring kata with full testing suite. 
 
-🎤 Origin
+## 🎤 Origin
 This repository was created as educational material to accompany a technical presentation delivered at [Olympp](https://olympp.fr/), a leading French Software Engineering Consultancy. The project serves as a practical demonstration of testing methodologies and refactoring techniques for professional software developers.
 
 ## 📜 Gilded Rose Requirements Specification
